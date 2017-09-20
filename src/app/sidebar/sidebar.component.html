@@ -1,0 +1,72 @@
+﻿<div class="sidebar" data-background-color="white" data-active-color="danger">
+
+    <!--
+        Tip 1: you can change the color of the sidebar's background using: data-background-color="white | black"
+        Tip 2: you can change the color of the active button using the data-active-color="primary | info | success | warning | danger"
+    -->
+
+    <div class="sidebar-wrapper">
+        <div class="logo">
+            <a href="http://www.creative-tim.com" class="simple-text">
+                Creative Tim
+            </a>
+        </div>
+
+        <ul class="nav">
+            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <a routerLink="/">
+                    <i class="ti-panel"></i>
+                    <p>Home</p>
+                </a>
+            </li>
+            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <a routerLink="/dashboard">
+                    <i class="ti-panel"></i>
+                    <p>Dashboard</p>
+                </a>
+            </li>
+            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <a routerLink="/showbikes">
+                    <i class="ti-user"></i>
+                    <p>Show bikes</p>
+                </a>
+            </li>
+            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <a routerLink="/addbike">
+                    <i class="ti-view-list-alt"></i>
+                    <p>add a bike</p>
+                </a>
+            </li>
+            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <a routerLink="/managemakes">
+                    <i class="ti-view-list-alt"></i>
+                    <p>Manage makes</p>
+                </a>
+            </li>
+            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <a  routerLink="/dealerdetail">
+                    <i class="ti-text"></i>
+                    <p>dealer form</p>
+                </a>
+            </li>
+            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <a routerLink="/dynamicform">
+                    <i class="ti-text"></i>
+                    <p>Test page</p>
+                </a>
+            </li>
+            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <a routerLink="/testpage">
+                    <i class="ti-text"></i>
+                    <p>Test page</p>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/creativetimofficial/paper-dashboard-angular">
+                    <i class="ti-pencil-alt2"></i>
+                    <p>Icons</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

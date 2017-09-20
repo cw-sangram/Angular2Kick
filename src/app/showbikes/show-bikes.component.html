@@ -1,0 +1,32 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <h2>Bikes</h2>
+        <p><a routerLink="/addbike">add a bike</a></p>
+        <div class="card">
+            <div class="header">
+                <h4 class="title">Current bikes</h4>
+                <p class="category">Here is a subtitle for this table</p>
+            </div>
+            <div class="content table-responsive table-full-width">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Model</th>
+                            <th>Detail</th>
+                            <th>Edit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let bike of bikes">
+                            <td>{{bike.id}}</td>
+                            <td>{{bike.name}}</td>
+                            <td>{{bike.name}}</td>
+                            <td><a [routerLink]="['/addbike', bike.id]"> <i class="ti-pencil"></i></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

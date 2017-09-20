@@ -1,0 +1,70 @@
+﻿<h2>Dealer Detail</h2>
+<form [formGroup]="dealerForm" (ngSubmit)="onSubmit()" novalidate>
+    <div class="form-group">
+        <label class="center-block">
+            Name:
+            <input class="form-control" formControlName="name">
+        </label>
+        <div class="alert alert-danger" *ngIf="dealerForm.get('name').hasError('required') && dealerForm.get('name').touched">
+            Name is required
+        </div>
+        <div class="alert alert-danger" *ngIf="dealerForm.get('name').hasError('minlength') && dealerForm.get('name').touched">
+            Minimum of 5 characters
+        </div>
+        <div class="alert alert-danger" *ngIf="dealerForm.get('name').hasError('maxlength') && dealerForm.get('name').touched">
+            Minimum of 10 characters
+        </div>
+        <div formGroupName="address">
+            <label class="center-block">
+                Street:
+                <input class="form-control" formControlName="street">
+            </label>
+            <div class="alert alert-danger" *ngIf="dealerForm.get('address.street').hasError('required') && dealerForm.get('address.street').touched">
+                select street
+            </div>
+            <label class="center-block">
+                City:
+                <input class="form-control" formControlName="city">
+            </label>
+            <div class="alert alert-danger" *ngIf="dealerForm.get('address.city').hasError('required') && dealerForm.get('address.city').touched">
+               select city
+            </div>
+            <label class="center-block">
+                State:
+                <select class="form-control" formControlName="state">
+                    <option *ngFor="let state of states" [value]="state">{{state}}</option>
+                </select>
+            </label>
+            <div class="alert alert-danger" *ngIf="dealerForm.get('address.state').hasError('required') && dealerForm.get('address.state').touched">
+                select state
+            </div>
+        </div>
+        <label class="center-block">
+            Pincode:
+            <input class="form-control" formControlName="pin">
+        </label>
+        <div class="alert alert-danger" *ngIf="dealerForm.get('pin').hasError('pattern') && dealerForm.get('pin').touched">
+           Pin is not in correct format
+        </div>
+        <div formGroupName="contact">
+            <label class="center-block">
+                mobile(+91):
+                <input class="form-control" formControlName="mobile">
+            </label>
+            <label class="center-block">
+                Phone:
+                <input class="form-control" formControlName="phone">
+            </label>
+        </div>
+    </div>
+    <button type="submit"  class="btn btn-success">Save</button> <!--[disabled]="!dealerForm.valid"-->
+    <button (click)="dealerForm.reset()" >Reset</button>
+</form>
+<div>
+    <p>Form pristine value: {{ dealerForm.pristine | json }}</p>
+    <p>Form Valid value: {{ dealerForm.valid | json }}</p>
+    <p>Form status: {{ dealerForm.status | json }}</p>
+    <p>States: {{ states | json }}</p>
+    <p>Name value: {{ dealerForm.get('name').touched }}</p>
+    <p>Street value: {{ dealerForm.get('address.street').value}}</p>
+</div>

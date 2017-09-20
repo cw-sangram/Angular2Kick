@@ -1,0 +1,36 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <h2>Makes</h2>
+        <div class="card">
+            <div class="header">
+                <h4 class="title">Current makes</h4>
+                <p class="category">manage all makes</p>
+            </div>
+            <div>
+                <input type="text" minlength="4" maxlength="20" class="form-control" id="makeName" #newmake>
+                <button type="submit" (click)="addMake(newmake.value)" class="btn btn-success">Submit</button>
+                <button class="btn btn-default" (click)="goBack()">Back</button>
+            </div>
+            <div class="content table-responsive table-full-width">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Model</th>
+                            <th>Detail</th>
+                            <th>Edit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let make of makes">
+                            <td>{{make.id}}</td>
+                            <td>{{make.name}}</td>
+                            <td>{{make.name}}</td>
+                            <td (click)="edited(make.id)"><i class="ti-pencil"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
